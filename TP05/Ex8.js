@@ -11,3 +11,5 @@ const multiplyBy5 = func(5);
 
 multiplyBy10(2);
 multiplyBy5(2); 
+
+func(5)(8);

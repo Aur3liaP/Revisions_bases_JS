@@ -3,6 +3,7 @@
 function capitalize (string) {
     const firstLetter = string.charAt(0).toUpperCase();
     console.log(firstLetter + string.slice(1))
+    // console.log(string.charAt(0).toUpperCase().substring(1))
 }
 
 capitalize("didier");
