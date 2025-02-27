@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); form();">
+        Nom :<input type="text" name="nom" id="nom">
+        Prénom :<input type="text" name="prénom" id="prénom">
+        Date de naissance :<input type="date" name="birthDate" id="birthDate">
+        <button type="submit">Envoyer</button>
+
+        <span id="resultat" style="background-color: rgb(212, 87, 87);"></span>
+    </form>
+    <script src="./tp08-formulaire.js"> </script>
+</body>
+</html>

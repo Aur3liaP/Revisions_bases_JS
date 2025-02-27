@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation</title>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); calcul();">
+        <input type="number" name="num1" id="num1">
+        <select name="op" id="op">
+            <option>Select an operator</option>
+            <option>+</option>
+            <option>-</option>
+            <option>/</option>
+            <option>*</option>
+        </select>
+        <input type="number" name="num2" id="num2">
+        <button type="submit">Calculate</button>
+
+        <span id="resultat"></span>
+    </form>
+    <script src="./tp08-operation.js"> </script>
+</body>
+</html>
