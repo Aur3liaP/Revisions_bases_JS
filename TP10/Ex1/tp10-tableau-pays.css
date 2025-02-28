@@ -1,0 +1,11 @@
+table {
+    border-collapse: collapse;
+    th, td {
+        padding-block: 0.75rem;
+        border-bottom: 1px solid grey;
+    
+    }
+    img{
+        text-align: center; 
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tp10-tableau-pays.css">
+</head>
+<body onload="initialiserDonnees()">
+    <h1 id="titre"></h1>
+    <h2 id="annee"></h2>
+    <form id="minMaxForm" onsubmit="trierValeur()">
+        Minimum <input type="number" name="min">
+        Maximum <input type="number" name="max">
+        <button type="submit" >Valider</button>
+    </form>
+
+    <table width="100%">
+        <thead>
+            <tr >
+                <th>Drapeau</th>
+                <th width="60%">Nom</th>
+                <th>Valeur</th>
+                <th>%</th>
+            </tr>
+        </thead>
+        <tbody id="corps"></tbody>
+    </table>
+
+    <script src="./tp10-tableau-pays.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulaire</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="./tp-10-formulaire.css">
+</head>
+<body onload="initialiserDonnees()">
+    <h1>Gestion des Diginamiciens ✨</h1>
+    
+    <div class="content">
+    <button class="buttons ajout" type="button" onclick="openModale('modaleCreate')">+ Ajouter</button>
+    <table width="75%">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date de Naissance</th>
+            <th>Lieu de Naissance</th>
+            <th>Adresse</th>
+            <th id="editColumn"></th>
+            <th id="deleteColumn"></th>
+        </tr>
+        </thead>
+        <tbody id="userInfos"></tbody>
+    </table>
+    </div>
+  
+  <!-- Modale CREATION -->
+  <modale-view id="modaleCreate" modale-width="30%">
+    <div slot="title" header-color="#5e69e9">Créer un utilisateur</div>
+    <div slot="body">
+      <form id="userForm">
+        <input type="hidden" name="idCreateur" value="AuréliaP" /> 
+        Nom: <input type="text" name="nom" required /> 
+        Prénom: <input type="text" name="prenom" required /> 
+        Date de naissance: <input type="date" name="dateNaissance" required /> 
+        Lieu de naissance: <input type="text" name="lieuNaissance" required /> 
+        <label for="dept-select">Dep naissance:</label>
+
+        <select name="departementNaissance">
+            <option value="">--Please choose an option--</option>
+            <option value="33">33</option>
+            <option value="51">51</option>
+            <option value="08">08</option>
+            <option value="40">40</option>
+        </select>
+        <fieldset>
+          <legend>Adresse</legend>
+          N°: <input type="number" name="numeroRue" required /> 
+          Rue: <input type="text" name="libelleRue" required /> 
+          Code postal: <input type="number" name="codePostal" required /> 
+          Ville: <input type="text" name="ville" required /> 
+        </fieldset>
+      </form>
+    </div>
+    <div slot="footer">
+      <input class="buttons annuler" type="button" value="Annuler" onclick="closeModale('modaleCreate')" />
+      <input class="buttons confirmer" type="button" value="Valider" onclick="creerUtilisateur()" />
+    </div>
+  </modale-view>
+
+    <!-- Modale UPDATE -->
+    <modale-view id="modaleUpdate" modale-width="30%">
+        <div slot="title" header-color="#1dcd5b">Modifier un utilisateur</div>
+        <div slot="body">
+            <form id="updateUserForm">
+              <input type="hidden" name="idCreateur" value="AuréliaP" /> 
+              Nom: <input type="text" name="nom" required /> 
+              Prénom: <input type="text" name="prenom" required /> 
+              Date de naissance: <input type="date" name="dateNaissance" required /> 
+              Lieu de naissance: <input type="text" name="lieuNaissance" required /> 
+              <label for="dept-select">Dep naissance:</label>
+      
+              <select name="departementNaissance">
+                  <option value="">--Please choose an option--</option>
+                  <option value="33">33</option>
+                  <option value="51">51</option>
+                  <option value="08">08</option>
+                  <option value="40">40</option>
+              </select>
+              <fieldset>
+                <legend>Adresse</legend>
+                N°: <input type="number" name="numeroRue" required /> 
+                Rue: <input type="text" name="libelleRue" required /> 
+                Code postal: <input type="number" name="codePostal" required /> 
+                Ville: <input type="text" name="ville" required /> 
+              </fieldset>
+            </form>
+          </div>
+        <div slot="footer">
+          <input class="buttons annuler" type="button" value="Annuler" onclick="closeModale('modaleDelete')" />
+          <input class="buttons confirmer" type="button" value="Valider" onclick="modifierUtilisateur()" />
+        </div>
+      </modale-view>
+
+  <!-- Modale DELETE -->
+  <modale-view id="modaleDelete" modale-width="30%">
+    <div slot="title" header-color="#dc3545">Supprimer un utilisateur</div>
+    <div slot="body">
+      <p>Etes-vous sûr de vouloir supprimer cet utilisateur ?</p>
+    </div>
+    <div slot="footer">
+      <input class="buttons annuler" type="button" value="Annuler" onclick="closeModale('modaleDelete')" />
+      <input class="buttons confirmer" type="button" value="Valider" onclick="confirmerSuppression()" />
+    </div>
+  </modale-view>
+
+    <script src="./modale-view.js"></script>
+    <script src="./tp-10-formulaire.js"></script>
+  </body>
+</html>
