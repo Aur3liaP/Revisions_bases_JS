@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./custom.js"></script>
+    <script>
+        function charger() {
+            const btn = document.querySelector('#btn1');
+            btn.setAttribute('label', 'Autre chose');
+            btn.updateColor("#000FF")
+        }
+    </script>
+</head>
+<body onload="charger()">
+    <my-button id="btn1" label="Valider"></my-button>
+    <my-button></my-button>
+
+</body>
+</html>
